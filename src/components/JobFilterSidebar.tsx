@@ -6,6 +6,7 @@ import FormSubmitButton from "./FormSubmitButton";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import Select from "./ui/select";
+//https://www.youtube.com/watch?v=XD5FpbVpWzk&list=PL8xkII-A9GDM_xATqbCBbSDPpVKrjbNYl&index=9&ab_channel=CodinginFlow 1hour 17mins
 
 async function filterJobs(formData: FormData) {
   "use server";
@@ -50,7 +51,7 @@ export default async function JobFilterSidebar({
             <Input
               id="q"
               name="q"
-              placeholder="Title, company, etc."
+              placeholder="Title, company, ect..."
               defaultValue={defaultValues.q}
             />
           </div>
@@ -61,7 +62,9 @@ export default async function JobFilterSidebar({
               name="type"
               defaultValue={defaultValues.type || ""}
             >
-              <option value="">All types</option>
+              <option value="" className="">
+                All types
+              </option>
               {jobTypes.map((type) => (
                 <option key={type} value={type}>
                   {type}
@@ -76,7 +79,9 @@ export default async function JobFilterSidebar({
               name="location"
               defaultValue={defaultValues.location || ""}
             >
-              <option value="">All locations</option>
+              <option value="" className="">
+                All Locations
+              </option>
               {distinctLocations.map((location) => (
                 <option key={location} value={location}>
                   {location}
@@ -86,15 +91,15 @@ export default async function JobFilterSidebar({
           </div>
           <div className="flex items-center gap-2">
             <input
+              defaultChecked={defaultValues.remote}
               id="remote"
               name="remote"
               type="checkbox"
               className="scale-125 accent-black"
-              defaultChecked={defaultValues.remote}
             />
-            <Label htmlFor="remote">Remote jobs</Label>
+            <Label htmlFor="remote">Remote Jobs</Label>
           </div>
-          <FormSubmitButton className="w-full">Filter jobs</FormSubmitButton>
+          <FormSubmitButton className="w-full">Filter Jobs</FormSubmitButton>
         </div>
       </form>
     </aside>

@@ -1,7 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
+body {
+  /* background: #E8CBC0;  
+background: -webkit-linear-gradient(to right, #636FA4, #E8CBC0);  
+background: linear-gradient(to right, #636fa491, #e8cbc09f);  */
+background-image: linear-gradient( 358.7deg,  rgba(42, 136, 157, 0.5) 1.7%, rgba(122, 197, 214, 0.678) 51.1%, rgba(211,232,242,1) 95.5% );
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -74,3 +81,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+option {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
